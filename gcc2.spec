@@ -7,7 +7,7 @@ Summary:	GNU Compiler Collection
 Summary(pl):	Kolekcja kompilatorów GNU
 Name:		%{rname}2
 Version:	2.95.4
-Release:	0.%{snap}.3
+Release:	0.%{snap}.4
 License:	GPL
 Group:		Development/Languages
 Source0:	ftp://gcc.gnu.org/pub/gcc/releases/gcc-%{rver}/%{rname}-%{rver}.tar.bz2
@@ -190,7 +190,6 @@ Group:		Libraries
 Version:	%{STDC_VERSION}
 Release:	%{STDC_RELEASE}
 Obsoletes:	libg++
-Provides:	libstdc++ = %{STDC_VERSION}
 
 %description -n libstdc++2
 This is the GNU implementation of the standard C++ libraries, along
