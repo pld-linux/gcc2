@@ -400,8 +400,10 @@ ln -sf gcc2 $RPM_BUILD_ROOT%{_bindir}/cc2
 
 ln -sf g772 $RPM_BUILD_ROOT%{_bindir}/f772
 
-(cd $RPM_BUILD_ROOT%{_libdir} ; LIBSTDC=$(ls libstdc++.so.*.*.*); \
-	ln -sf %{_libdir}/${LIBSTDC} y+.so)
+(cd $RPM_BUILD_ROOT%{_libdir} ; LIBSTDC=$(ls libstdc++.so.*.*.*) ; \
+ cd $RPM_BUILD_ROOT%{_libdir}/gcc-lib/%{_target_cpu}*/* ; \
+ ln -sf %{_libdir}/${LIBSTDC} libstdc++.so)
+
 mv $RPM_BUILD_ROOT%{_libdir}/libstdc++.a \
 	$RPM_BUILD_ROOT%{_libdir}/gcc-lib/%{_target_cpu}*/*/
 
