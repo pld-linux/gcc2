@@ -335,6 +335,7 @@ Preprocesor C umo¿liwia wykonywanie czterech ró¿nych typów operacji:
 %patch19 -p0
 #%patch20 -p0
 %patch21 -p1
+%patch22 -p1
 
 %build
 (cd gcc; autoconf)
