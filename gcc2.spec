@@ -397,8 +397,6 @@ mv $RPM_BUILD_ROOT%{_libdir}/libstdc++.a \
 
 ln -sf %{_bindir}/cpp2 $RPM_BUILD_ROOT/lib/cpp2
 
-gzip -9nf ../READ* ../ChangeLog ../gcc/ch/chill.brochure
-
 cd $RPM_BUILD_ROOT%{_bindir}
 mv chill chill2
 mv %{_target_platform}-gcc %{_target_platform}-gcc2
@@ -438,7 +436,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc READ* ChangeLog.gz
+%doc READ* ChangeLog
 
 %dir %{_libdir}/gcc-lib
 %dir %{_libdir}/gcc-lib/%{_target_cpu}*
@@ -506,7 +504,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files chill
 %defattr(644,root,root,755)
-%doc gcc/ch/chill.brochure.gz
+%doc gcc/ch/chill.brochure
 
 %attr(755,root,root) %{_bindir}/chill2
 
