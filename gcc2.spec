@@ -7,7 +7,7 @@ Summary:	GNU Compiler Collection
 Summary(pl):	Kolekcja kompilatorów GNU
 Name:		%{rname}2
 Version:	2.95.4
-Release:	0.%{snap}.5
+Release:	0.%{snap}.6
 License:	GPL
 Group:		Development/Languages
 Source0:	ftp://gcc.gnu.org/pub/gcc/releases/gcc-%{rver}/%{rname}-%{rver}.tar.bz2
@@ -167,23 +167,6 @@ Europe, Brazil, Korea, and other places.
 Ten pakiet dodaje do gcc mo¿liwo¶æ kompilowania programów w jêzyku
 CHILL.
 
-%package java
-Summary:	Java support for gcc
-Summary(pl):	Wspomoganie Java dla gcc
-Group:		Development/Languages
-Requires:	%{name} = %{version}
-Requires:	libgcj2 >= 2.95.1
-
-%description java
-This package adds experimental support for compiling Java(tm) programs
-and bytecode into native code. To use this you will also need the
-libgcj package.
-
-%description java -l pl
-Ten pakiet dodaje do gcc (eksperymentaln±) mo¿liwo¶æ kompilowania
-programów w Javie(tm) i bytecode do kodu procesora. Wymaga pakietu
-libgcj.
-
 %package -n libstdc++2
 Summary:	GNU c++ library
 Summary(pl):	Biblioteki GNU C++
@@ -339,6 +322,7 @@ Preprocesor C umo¿liwia wykonywanie czterech ró¿nych typów operacji:
 %patch22 -p1
 
 %build
+rm -rf gcc/java
 (cd gcc; autoconf; cp -f /usr/share/automake/config.* .)
 cp -f /usr/share/automake/config.* .
 rm -rf obj-%{_target_platform}
@@ -401,9 +385,6 @@ ln -sf %{_bindir}/cpp2 $RPM_BUILD_ROOT/lib/cpp2
 cd $RPM_BUILD_ROOT%{_bindir}
 mv chill chill2
 mv %{_target_platform}-gcc %{_target_platform}-gcc2
-mv jcf-dump jcf-dump2
-mv jv-scan jv-scan2
-mv gcjh gcjh2
 
 %post
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
@@ -514,17 +495,6 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/gcc-lib/%{_target_cpu}*/*/cc1chill
 %attr(755,root,root) %{_libdir}/gcc-lib/%{_target_cpu}*/*/chill*.o
 %{_libdir}/gcc-lib/%{_target_cpu}*/*/libchill.a
-
-%files java
-%defattr(644,root,root,755)
-
-%attr(755,root,root) %{_bindir}/gcj2
-%attr(755,root,root) %{_bindir}/gcjh2
-%attr(755,root,root) %{_bindir}/jcf-dump2
-%attr(755,root,root) %{_bindir}/jv-scan2
-
-%attr(755,root,root) %{_libdir}/gcc-lib/%{_target_cpu}*/*/jc1
-%attr(755,root,root) %{_libdir}/gcc-lib/%{_target_cpu}*/*/jvgenmain
 
 %files -n libstdc++2
 %defattr(644,root,root,755)
