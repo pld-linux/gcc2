@@ -1,0 +1,11 @@
+diff -urN gcc-2.95.3.org/gcc/configure.in gcc-2.95.3/gcc/configure.in
+--- gcc-2.95.3.org/gcc/configure.in	Thu Jun 14 13:36:24 2001
++++ gcc-2.95.3/gcc/configure.in	Thu Jun 14 13:38:17 2001
+@@ -294,6 +294,7 @@
+ 
+ # Determine the host, build, and target systems
+ AC_CANONICAL_SYSTEM
++AC_ARG_PROGRAM
+ 
+ # Find the native compiler
+ AC_PROG_CC
