@@ -39,7 +39,7 @@ BuildRequires:	texinfo
 Requires:	binutils >= 2.9.1.0.25
 Requires:	cpp2 = %{version}
 URL:		http://gcc.gnu.org/
-BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+BuildRoot:	%{tmpdir}/%{name}-%{rver}-root-%(id -u -n)
 
 %description
 A compiler aimed at integrating all the optimizations and features
