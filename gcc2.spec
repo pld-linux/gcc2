@@ -1,6 +1,6 @@
-%define	rname	gcc
-%define rver	2.95.3
-%define		STDC_VERSION 2.10.0
+%define		rname		gcc
+%define 	rver		2.95.3
+%define		STDC_VERSION	2.10.0
 Summary:	GNU Compiler Collection
 Summary(pl):	Kolekcja kompilatorów GNU
 Name:		%{rname}2
@@ -39,7 +39,7 @@ BuildRequires:	texinfo
 Requires:	binutils >= 2.9.1.0.25
 Requires:	cpp2 = %{version}
 URL:		http://gcc.gnu.org/
-BuildRoot:	%{tmpdir}/%{name}-%{rver}-root-%(id -u -n)
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 A compiler aimed at integrating all the optimizations and features
@@ -150,7 +150,7 @@ Summary(pl):	Wspomoganie CHILL dla gcc
 Group:		Development/Languages
 Group(de):	Entwicklung/Sprachen
 Group(pl):	Programowanie/Jêzyki
-Requires:	%{rname} = %{version}
+Requires:	%{name} = %{version}
 
 %description chill
 This package adds support for compiling CHILL programs with the GNU
@@ -173,7 +173,7 @@ Summary(pl):	Wspomoganie Java dla gcc
 Group:		Development/Languages
 Group(de):	Entwicklung/Sprachen
 Group(pl):	Programowanie/Jêzyki
-Requires:	%{rname} = %{version}
+Requires:	%{name} = %{version}
 Requires:	libgcj2 >= 2.95.1
 
 %description java
@@ -195,6 +195,7 @@ Group(fr):	Librairies
 Group(pl):	Biblioteki
 Version:	%{STDC_VERSION}
 Obsoletes:	libg++
+Provides:	libstdc++ = %{STDC_VERSION}
 
 %description -n libstdc++2
 This is the GNU implementation of the standard C++ libraries, along
@@ -232,7 +233,7 @@ Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
 Version:	%{STDC_VERSION}
 Requires:	libstdc++2 = %{STDC_VERSION}
-Requires:	%{rname}-c++
+Requires:	%{name}-c++
 Obsoletes:	libg++-devel
 
 %description -n libstdc++2-devel
@@ -355,6 +356,7 @@ install -d obj-%{_target_platform} && cd obj-%{_target_platform}
 CFLAGS="%{rpmcflags}" \
 CXXFLAGS="%{rpmcflags}" \
 TEXCONFIG=false ../configure \
+	--host=%{_target_platform} \
 	--prefix=%{_prefix} \
 	--infodir=%{_infodir} \
 	--enable-shared \
@@ -366,8 +368,7 @@ TEXCONFIG=false ../configure \
 	--with-gnu-ld \
 	--with-gxx-include-dir="\$\{prefix\}/include/g++" \
 	--disable-nls \
-	--program-suffix="2" \
-	%{_target_platform}
+	--program-suffix="2"
 
 PATH=$PATH:/sbin:%{_sbindir}
 touch  ../gcc/c-gperf.h
@@ -398,8 +399,12 @@ PATH=$PATH:/sbin:%{_sbindir}
 ln -sf gcc2 $RPM_BUILD_ROOT%{_bindir}/cc2
 
 ln -sf g772 $RPM_BUILD_ROOT%{_bindir}/f772
-(cd $RPM_BUILD_ROOT%{_libdir} ; ln -sf libstdc++.so.*.*.* \
-$RPM_BUILD_ROOT%{_libdir}/gcc-lib/%{_target_cpu}*/*/libstdc++.so)
+
+(cd $RPM_BUILD_ROOT%{_libdir} ; LIBSTDC=$(ls libstdc++.so.*.*.*); \
+	ln -sf %{_libdir}/${LIBSTDC} y+.so)
+mv $RPM_BUILD_ROOT%{_libdir}/libstdc++.a \
+	$RPM_BUILD_ROOT%{_libdir}/gcc-lib/%{_target_cpu}*/*/
+
 ln -sf %{_bindir}/cpp2 $RPM_BUILD_ROOT/lib/cpp2
 
 gzip -9nf ../READ* ../ChangeLog ../gcc/ch/chill.brochure
@@ -546,7 +551,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n libstdc++2-static
 %defattr(644,root,root,755)
-%attr(644,root,root) %{_libdir}/libstdc++.a
+%attr(644,root,root) %{_libdir}/gcc-lib/%{_target_cpu}*/*/libstdc++.a
 
 %files -n cpp2
 %defattr(644,root,root,755)
