@@ -10,8 +10,6 @@ Version:	2.95.4
 Release:	0.%{snap}.0
 License:	GPL
 Group:		Development/Languages
-Group(de):	Entwicklung/Sprachen
-Group(pl):	Programowanie/Jêzyki
 Source0:	ftp://gcc.gnu.org/pub/gcc/releases/gcc-%{rver}/%{rname}-%{rver}.tar.gz
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-pld-linux.patch
@@ -57,8 +55,6 @@ Summary(fr):	Support C++ pour le compilateur gcc
 Summary(pl):	Wspomaganie C++ dla kompilatora gcc
 Summary(tr):	gcc için C++ desteği
 Group:		Development/Languages
-Group(de):	Entwicklung/Sprachen
-Group(pl):	Programowanie/Jêzyki
 Obsoletes:	egcc-c++
 Obsoletes:	egcs-c++
 Requires:	%{name} = %{version}
@@ -98,8 +94,6 @@ Summary(fr):	Gestion d'Objective C pour gcc
 Summary(pl):	Wspomaganie obiektowego C dla kompilatora gcc
 Summary(tr):	gcc için Objective C desteği
 Group:		Development/Languages
-Group(de):	Entwicklung/Sprachen
-Group(pl):	Programowanie/Jêzyki
 Obsoletes:	egcc-objc
 Obsoletes:	egcs-objc
 Requires:	%{name} = %{version}
@@ -136,8 +130,6 @@ kitaplığı bu pakette yer almaz.
 Summary:	Fortran 77 support for gcc
 Summary(pl):	Wspomaganie Fortran 77 dla gcc
 Group:		Development/Languages
-Group(de):	Entwicklung/Sprachen
-Group(pl):	Programowanie/Jêzyki
 Obsoletes:	egcs-g77
 
 %description g77
@@ -152,8 +144,6 @@ potrzebny do kompilowania programów pisanych w jêzyku Fortran 77.
 Summary:	CHILL support for gcc
 Summary(pl):	Wspomoganie CHILL dla gcc
 Group:		Development/Languages
-Group(de):	Entwicklung/Sprachen
-Group(pl):	Programowanie/Jêzyki
 Requires:	%{name} = %{version}
 
 %description chill
@@ -175,8 +165,6 @@ CHILL.
 Summary:	Java support for gcc
 Summary(pl):	Wspomoganie Java dla gcc
 Group:		Development/Languages
-Group(de):	Entwicklung/Sprachen
-Group(pl):	Programowanie/Jêzyki
 Requires:	%{name} = %{version}
 Requires:	libgcj2 >= 2.95.1
 
@@ -194,13 +182,6 @@ libgcj.
 Summary:	GNU c++ library
 Summary(pl):	Biblioteki GNU C++
 Group:		Libraries
-Group(de):	Libraries
-Group(es):	Bibliotecas
-Group(fr):	Librairies
-Group(pl):	Biblioteki
-Group(pt_BR):	Bibliotecas
-Group(ru):	âÉÂÌÉÏÔÅËÉ
-Group(uk):	â¦ÂÌ¦ÏÔÅËÉ
 Version:	%{STDC_VERSION}
 Release:	%{STDC_RELEASE}
 Obsoletes:	libg++
@@ -237,13 +218,6 @@ Summary(fr):	Fichiers d'en-tête et biblitothèques pour développer en C++
 Summary(pl):	Pliki nag³ówkowe do programowania z u¿yciem bibliotek C++
 Summary(tr):	C++ ile program geliştirmek için gerekli dosyalar
 Group:		Development/Libraries
-Group(de):	Entwicklung/Libraries
-Group(es):	Desarrollo/Bibliotecas
-Group(fr):	Development/Librairies
-Group(pl):	Programowanie/Biblioteki
-Group(pt_BR):	Desenvolvimento/Bibliotecas
-Group(ru):	òÁÚÒÁÂÏÔËÁ/âÉÂÌÉÏÔÅËÉ
-Group(uk):	òÏÚÒÏÂËÁ/â¦ÂÌ¦ÏÔÅËÉ
 Version:	%{STDC_VERSION}
 Release:	%{STDC_RELEASE}
 Requires:	libstdc++2 = %{STDC_VERSION}
@@ -264,13 +238,6 @@ programowaniu w jêzyku C++.
 Summary:	Static c++ standard library
 Summary(pl):	Biblioteka statyczna c++
 Group:		Development/Libraries
-Group(de):	Entwicklung/Libraries
-Group(es):	Desarrollo/Bibliotecas
-Group(fr):	Development/Librairies
-Group(pl):	Programowanie/Biblioteki
-Group(pt_BR):	Desenvolvimento/Bibliotecas
-Group(ru):	òÁÚÒÁÂÏÔËÁ/âÉÂÌÉÏÔÅËÉ
-Group(uk):	òÏÚÒÏÂËÁ/â¦ÂÌ¦ÏÔÅËÉ
 Version:	%{STDC_VERSION}
 Release:	%{STDC_RELEASE}
 Requires:	libstdc++2-devel = %{STDC_VERSION}
@@ -285,8 +252,6 @@ Biblioteka statyczna C++.
 Summary:	The C Pre Processor
 Summary(pl):	Preprocesor C
 Group:		Development/Languages
-Group(de):	Entwicklung/Sprachen
-Group(pl):	Programowanie/Jêzyki
 Obsoletes:	egcs-cpp
 
 %description -n cpp2
