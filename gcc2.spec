@@ -2,12 +2,12 @@
 %define 	rver		2.95.3
 %define		snap		20010823
 %define		STDC_VERSION	2.10.0
-%define		STDC_RELEASE	2
+%define		STDC_RELEASE	5
 Summary:	GNU Compiler Collection
 Summary(pl):	Kolekcja kompilatorów GNU
 Name:		%{rname}2
 Version:	2.95.4
-Release:	0.%{snap}.4
+Release:	0.%{snap}.5
 License:	GPL
 Group:		Development/Languages
 Source0:	ftp://gcc.gnu.org/pub/gcc/releases/gcc-%{rver}/%{rname}-%{rver}.tar.bz2
@@ -392,11 +392,7 @@ ln -sf gcc2 $RPM_BUILD_ROOT%{_bindir}/cc2
 
 ln -sf g772 $RPM_BUILD_ROOT%{_bindir}/f772
 
-(cd $RPM_BUILD_ROOT%{_libdir} ; LIBSTDC=$(ls libstdc++.so.*.*.*) ; \
- cd $RPM_BUILD_ROOT%{_libdir}/gcc-lib/%{_target_cpu}*/* ; \
- ln -sf ../../../${LIBSTDC} libstdc++.so)
-
-mv $RPM_BUILD_ROOT%{_libdir}/libstdc++.a \
+mv $RPM_BUILD_ROOT%{_libdir}/libstdc++.{so,la,a} \
 	$RPM_BUILD_ROOT%{_libdir}/gcc-lib/%{_target_cpu}*/*/
 
 ln -sf %{_bindir}/cpp2 $RPM_BUILD_ROOT/lib/cpp2
@@ -538,6 +534,7 @@ rm -rf $RPM_BUILD_ROOT
 %files -n libstdc++2-devel
 %defattr(644,root,root,755)
 %{_includedir}/g++
+%attr(755,root,root) %{_libdir}/gcc-lib/%{_target_cpu}*/*/libstdc++.la
 %attr(755,root,root) %{_libdir}/gcc-lib/%{_target_cpu}*/*/libstdc++.so
 
 %files -n libstdc++2-static
