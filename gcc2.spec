@@ -7,7 +7,7 @@ Summary:	GNU Compiler Collection
 Summary(pl):	Kolekcja kompilatorów GNU
 Name:		%{rname}2
 Version:	2.95.4
-Release:	0.%{snap}.2
+Release:	0.%{snap}.3
 License:	GPL
 Group:		Development/Languages
 Source0:	ftp://gcc.gnu.org/pub/gcc/releases/gcc-%{rver}/%{rname}-%{rver}.tar.gz
@@ -37,6 +37,7 @@ Patch22:	%{name}-athlon-option.patch
 Patch50:	gcc-%{rver}-%{snap}.patch.bz2
 BuildRequires:	bison
 BuildRequires:	texinfo
+BuildRequires:	automake
 Requires:	binutils >= 2.9.1.0.25
 Requires:	cpp2 = %{version}
 %ifarch alpha
@@ -338,10 +339,12 @@ Preprocesor C umo¿liwia wykonywanie czterech ró¿nych typów operacji:
 %patch22 -p1
 
 %build
-(cd gcc; autoconf)
+(cd gcc; autoconf; cp -f /usr/share/automake/config.* .)
+cp -f /usr/share/automake/config.* .
 rm -rf obj-%{_target_platform}
 install -d obj-%{_target_platform} && cd obj-%{_target_platform}
 
+CC="%{__cc}"; export CC
 CFLAGS="%{rpmcflags}" \
 CXXFLAGS="%{rpmcflags}" \
 TEXCONFIG=false ../configure \
