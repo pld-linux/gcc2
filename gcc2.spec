@@ -359,6 +359,7 @@ CFLAGS="%{rpmcflags}" \
 CXXFLAGS="%{rpmcflags}" \
 TEXCONFIG=false ../configure \
 	--host=%{_target_platform} \
+	--build=%{_target_platform} \
 	--prefix=%{_prefix} \
 	--infodir=%{_infodir} \
 	--enable-shared \
