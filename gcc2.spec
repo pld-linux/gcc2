@@ -7,7 +7,7 @@ Summary:	GNU Compiler Collection
 Summary(pl):	Kolekcja kompilatorów GNU
 Name:		%{rname}2
 Version:	2.95.4
-Release:	0.%{snap}.1
+Release:	0.%{snap}.2
 License:	GPL
 Group:		Development/Languages
 Source0:	ftp://gcc.gnu.org/pub/gcc/releases/gcc-%{rver}/%{rname}-%{rver}.tar.gz
@@ -33,6 +33,7 @@ Patch18:	%{name}-gcj-vs-iconv.patch
 Patch19:	%{name}-libobjc.patch
 #Patch20:	%{name}-pointer-arith.patch
 Patch21:	%{name}-suffix.patch
+Patch22:	%{name}-athlon-option.patch
 Patch50:	gcc-%{rver}-%{snap}.patch.bz2
 BuildRequires:	bison
 BuildRequires:	texinfo
