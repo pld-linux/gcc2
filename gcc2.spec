@@ -40,7 +40,7 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	bison
 BuildRequires:	texinfo
-Requires:	binutils >= 2.9.1.0.25
+Requires:	binutils
 Requires:	cpp2 = %{version}
 %ifarch alpha
 Conflicts:	glibc-devel < 2.2.5
