@@ -392,7 +392,7 @@ ln -sf gcc2 $RPM_BUILD_ROOT%{_bindir}/cc2
 
 ln -sf g772 $RPM_BUILD_ROOT%{_bindir}/f772
 
-mv $RPM_BUILD_ROOT%{_libdir}/libstdc++.{so,la,a} \
+mv $RPM_BUILD_ROOT%{_libdir}/libstdc++.a \
 	$RPM_BUILD_ROOT%{_libdir}/gcc-lib/%{_target_cpu}*/*/
 
 ln -sf %{_bindir}/cpp2 $RPM_BUILD_ROOT/lib/cpp2
@@ -534,7 +534,6 @@ rm -rf $RPM_BUILD_ROOT
 %files -n libstdc++2-devel
 %defattr(644,root,root,755)
 %{_includedir}/g++
-%attr(755,root,root) %{_libdir}/gcc-lib/%{_target_cpu}*/*/libstdc++.la
 %attr(755,root,root) %{_libdir}/gcc-lib/%{_target_cpu}*/*/libstdc++.so
 
 %files -n libstdc++2-static
