@@ -10,7 +10,7 @@ Version:	2.95.4
 Release:	0.%{snap}.3
 License:	GPL
 Group:		Development/Languages
-Source0:	ftp://gcc.gnu.org/pub/gcc/releases/gcc-%{rver}/%{rname}-%{rver}.tar.gz
+Source0:	ftp://gcc.gnu.org/pub/gcc/releases/gcc-%{rver}/%{rname}-%{rver}.tar.bz2
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-pld-linux.patch
 Patch2:		%{name}-libstdc++.patch
