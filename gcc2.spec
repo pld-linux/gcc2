@@ -36,9 +36,10 @@ Patch19:	%{name}-libobjc.patch
 Patch21:	%{name}-suffix.patch
 Patch22:	%{name}-athlon-option.patch
 Patch50:	gcc-%{rver}-%{snap}.patch.bz2
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	bison
 BuildRequires:	texinfo
-BuildRequires:	automake
 Requires:	binutils >= 2.9.1.0.25
 Requires:	cpp2 = %{version}
 %ifarch alpha
@@ -323,7 +324,10 @@ Preprocesor C umo¿liwia wykonywanie czterech ró¿nych typów operacji:
 
 %build
 rm -rf gcc/java
-(cd gcc; autoconf; cp -f /usr/share/automake/config.* .)
+cd gcc
+%{__autoconf}
+cp -f /usr/share/automake/config.* .
+cd ..
 cp -f /usr/share/automake/config.* .
 rm -rf obj-%{_target_platform}
 install -d obj-%{_target_platform} && cd obj-%{_target_platform}
@@ -386,6 +390,9 @@ cd $RPM_BUILD_ROOT%{_bindir}
 mv chill chill2
 mv %{_target_platform}-gcc %{_target_platform}-gcc2
 
+%clean
+rm -rf $RPM_BUILD_ROOT
+
 %post
 [ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
 
@@ -412,9 +419,6 @@ mv %{_target_platform}-gcc %{_target_platform}-gcc2
 
 %post   -p /sbin/ldconfig -n libstdc++2
 %postun -p /sbin/ldconfig -n libstdc++2
-
-%clean
-rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
