@@ -1,0 +1,23 @@
+diff -ur gcc-2.95.3/gcc/config/i386/i386.c gcc-2.95.3-/gcc/config/i386/i386.c
+--- gcc-2.95.3/gcc/config/i386/i386.c	Sat Mar 23 12:21:51 2002
++++ gcc-2.95.3-/gcc/config/i386/i386.c	Sat Mar 23 12:19:38 2002
+@@ -253,6 +253,8 @@
+       {PROCESSOR_I686_STRING, PROCESSOR_PENTIUMPRO, &pentiumpro_cost, 0, 0},
+       {PROCESSOR_PENTIUMPRO_STRING, PROCESSOR_PENTIUMPRO,
+        &pentiumpro_cost, 0, 0},
++      {PROCESSOR_ATHLON_STRING, PROCESSOR_PENTIUMPRO,
++       &pentiumpro_cost, 0, 0},
+       {PROCESSOR_K6_STRING, PROCESSOR_K6, &k6_cost, 0, 0}
+     };
+ 
+diff -ur gcc-2.95.3/gcc/config/i386/i386.h gcc-2.95.3-/gcc/config/i386/i386.h
+--- gcc-2.95.3/gcc/config/i386/i386.h	Sun Apr 25 13:43:49 1999
++++ gcc-2.95.3-/gcc/config/i386/i386.h	Sat Mar 23 12:20:43 2002
+@@ -233,6 +233,7 @@
+ #define PROCESSOR_PENTIUM_STRING "pentium"
+ #define PROCESSOR_I686_STRING "i686"
+ #define PROCESSOR_PENTIUMPRO_STRING "pentiumpro"
++#define PROCESSOR_ATHLON_STRING "athlon"
+ #define PROCESSOR_K6_STRING "k6"
+ 
+ extern enum processor_type ix86_cpu;
