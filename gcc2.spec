@@ -65,24 +65,24 @@ support for most of the current C++ specification, including templates
 and exception handling. It does not include a standard C++ library,
 which is available separately.
 
-%description -l de c++
+%description c++ -l de
 Dieses Paket enthält die C++-Unterstützung für den GNU-C-Compiler. Es
 unterstützt die aktuelle C++-Spezifikation, inkl. Templates und
 Ausnahmeverarbeitung. Eine C++-Standard-Library ist nicht enthalten -
 sie ist getrennt erhältlich.
 
-%description -l fr c++
+%description c++ -l fr
 Ce package ajoute un support C++ au compilateur c GNU. Il comprend un
 support pour la plupart des spécifications actuelles de C++, dont les
 modéles et la gestion des exceptions. Il ne comprend pas une
 bibliothéque C++ standard, qui est disponible séparément.
 
-%description -l pl c++
+%description c++ -l pl
 Programy z tego pakietu zapewniaj± wsparcie dla C++ do gcc. Posiada
 wspomaganie dla du¿ej ilo¶ci obecnych specyfikacji C++, nie posiada
 natomiast standardowych bibliotek C++, które s± w oddzielnym pakiecie.
 
-%description -l tr c++
+%description c++ -l tr
 Bu paket, GNU C derleyicisine C++ desteði ekler. 'Template'ler ve
 aykýrý durum iþleme gibi çoðu güncel C++ tanýmlarýna uyar. Standart
 C++ kitaplýðý bu pakette yer almaz.
@@ -104,23 +104,23 @@ C is a object oriented derivative of the C language, mainly used on
 systems running NeXTSTEP. This package does not include the standard
 objective C object library.
 
-%description -l de objc
+%description objc -l de
 Dieses Paket ergänzt den GNU-C-Compiler durch Objective-C-Support.
 Objective C ist ein objektorientiertes Derivat von C, das zur
 Hauptsache auf Systemen mit NeXTSTEP zum Einsatz kommt. Die
 Standard-Objective-C-Objekt-Library ist nicht Teil des Pakets.
 
-%description -l fr objc
+%description objc -l fr
 Ce package ajoute un support Objective C au compilateur C GNU.
 L'Objective C est un langage orienté objetdérivé du langage C,
 principalement utilisé sur les systèmes NeXTSTEP. Ce package n'inclue
 pas la bibliothéque Objective C standard.
 
-%description -l pl objc
+%description objc -l pl
 Ten pakiet jest wsparciem obiektowego C dla kompilatora gcc. W
 pakiecie nie ma jeszcze bibliotek C-obj.
 
-%description -l tr objc
+%description objc -l tr
 Bu paket, GNU C derleyicisine Objective C desteði ekler. Objective C,
 C dilinin nesne yönelik bir türevidir ve NeXTSTEP altýnda çalýþan
 sistemlerde yaygýn olarak kullanýlýr. Standart Objective C nesne
@@ -136,7 +136,7 @@ Obsoletes:	egcs-g77
 This apckage adds support for compiling Fortran 77 programs with the
 GNU compiler.
 
-%description -l pl g77
+%description g77 -l pl
 Ten pakiet jest wsparciem Fortran 77 dla kompilatora gcc. Jest
 potrzebny do kompilowania programów pisanych w jêzyku Fortran 77.
 
@@ -157,7 +157,7 @@ applications as Ada (especially large embedded systems). Chill was
 never used much in the United States, but is still being used in
 Europe, Brazil, Korea, and other places.
 
-%description -l pl chill
+%description chill -l pl
 Ten pakiet dodaje do gcc mo¿liwo¶æ kompilowania programów w jêzyku
 CHILL.
 
@@ -173,7 +173,7 @@ This package adds experimental support for compiling Java(tm) programs
 and bytecode into native code. To use this you will also need the
 libgcj package.
 
-%description -l pl java
+%description java -l pl
 Ten pakiet dodaje do gcc (eksperymentaln±) mo¿liwo¶æ kompilowania
 programów w Javie(tm) i bytecode do kodu procesora. Wymaga pakietu
 libgcj.
@@ -192,22 +192,22 @@ This is the GNU implementation of the standard C++ libraries, along
 with additional GNU tools. This package includes the shared libraries
 necessary to run C++ applications.
 
-%description -l de -n libstdc++2
+%description -n libstdc++2 -l de
 Dies ist die GNU-Implementierung der Standard-C++-Libraries mit
 weiteren GNU-Tools. Dieses Paket enthält die zum Ausführen von
 C++-Anwendungen erforderlichen gemeinsam genutzten Libraries.
 
-%description -l fr -n libstdc++2
+%description -n libstdc++2 -l fr
 Ceci est l'implémentation GNU des librairies C++ standard, ainsi que
 des outils GNU supplémentaires. Ce package comprend les librairies
 partagées nécessaires à l'exécution d'application C++.
 
-%description -l pl -n libstdc++2 
+%description -n libstdc++2 -l pl
 Pakiet ten zawiera biblioteki bêd±ce implementacj± standardowych
 bibliotek C++. Znajduj± siê w nim biblioteki dynamiczne niezbêdne do
 uruchomienia aplikacji napisanych w C++.
 
-%description -l tr -n libstdc++2
+%description -n libstdc++2 -l tr
 Bu paket, standart C++ kitaplýklarýnýn GNU gerçeklemesidir ve C++
 uygulamalarýnýn koþturulmasý için gerekli kitaplýklarý içerir.
 
@@ -229,7 +229,7 @@ This is the GNU implementation of the standard C++ libraries. This
 package includes the header files and libraries needed for C++
 development.
 
-%description -l pl -n libstdc++2-devel
+%description -n libstdc++2-devel -l pl
 Pakiet ten zawiera biblioteki bêd±ce implementacj± standardowych
 bibliotek C++. Znajduj± siê w nim pliki nag³ówkowe wykorzystywane przy
 programowaniu w jêzyku C++.
@@ -245,7 +245,7 @@ Requires:	libstdc++2-devel = %{STDC_VERSION}
 %description -n libstdc++2-static
 Static c++ standard library.
 
-%description -l pl -n libstdc++2-static
+%description -n libstdc++2-static -l pl
 Biblioteka statyczna C++.
 
 %package -n cpp2
@@ -276,12 +276,12 @@ as you see fit:
   line control to inform the compiler of where each source line
   originally came from.
 
-%description -l pl -n cpp2
-Preprocesor C jest "makro procesorem" który jest automatycznie
-u¿ywany przez kompilator C do obróbki kompilowanego programu przed
-w³a¶ciw± kompilacj±. Jest on nazywany makroprocesorem, poniewa¿
-umo¿liwia definiowanie i rozwijanie makr umo¿liwiaj±cych skracanie
-d³ugich konstrukcji w jêzyku C.
+%description -n cpp2 -l pl
+Preprocesor C jest "makro procesorem" który jest automatycznie u¿ywany
+przez kompilator C do obróbki kompilowanego programu przed w³a¶ciw±
+kompilacj±. Jest on nazywany makroprocesorem, poniewa¿ umo¿liwia
+definiowanie i rozwijanie makr umo¿liwiaj±cych skracanie d³ugich
+konstrukcji w jêzyku C.
 
 Preprocesor C umo¿liwia wykonywanie czterech ró¿nych typów operacji:
 
@@ -335,7 +335,7 @@ Preprocesor C umo¿liwia wykonywanie czterech ró¿nych typów operacji:
 %build
 (cd gcc; autoconf)
 rm -rf obj-%{_target_platform}
-install -d obj-%{_target_platform} && cd obj-%{_target_platform} 
+install -d obj-%{_target_platform} && cd obj-%{_target_platform}
 
 CFLAGS="%{rpmcflags}" \
 CXXFLAGS="%{rpmcflags}" \
@@ -398,7 +398,7 @@ gzip -9nf ../READ* ../ChangeLog ../gcc/ch/chill.brochure
 
 cd $RPM_BUILD_ROOT%{_bindir}
 mv chill chill2
-mv %{_target_platform}-gcc %{_target_platform}-gcc2 
+mv %{_target_platform}-gcc %{_target_platform}-gcc2
 mv jcf-dump jcf-dump2
 mv jv-scan jv-scan2
 mv gcjh gcjh2
