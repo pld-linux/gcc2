@@ -398,7 +398,8 @@ PATH=$PATH:/sbin:%{_sbindir}
 ln -sf gcc2 $RPM_BUILD_ROOT%{_bindir}/cc2
 
 ln -sf g772 $RPM_BUILD_ROOT%{_bindir}/f772
-(cd $RPM_BUILD_ROOT%{_libdir} ; ln -sf libstdc++.so.*.*.* $RPM_BUILD_ROOT%{_libdir}/libstdc++.so)
+(cd $RPM_BUILD_ROOT%{_libdir} ; ln -sf libstdc++.so.*.*.* \
+$RPM_BUILD_ROOT%{_libdir}/gcc-lib/%{_target_cpu}*/*/libstdc++.so)
 ln -sf %{_bindir}/cpp2 $RPM_BUILD_ROOT/lib/cpp2
 
 gzip -9nf ../READ* ../ChangeLog ../gcc/ch/chill.brochure
@@ -541,7 +542,7 @@ rm -rf $RPM_BUILD_ROOT
 %files -n libstdc++2-devel
 %defattr(644,root,root,755)
 %{_includedir}/g++
-%attr(755,root,root) %{_libdir}/libstdc++.so
+%attr(755,root,root) %{_libdir}/gcc-lib/%{_target_cpu}*/*/libstdc++.so
 
 %files -n libstdc++2-static
 %defattr(644,root,root,755)
