@@ -7,7 +7,7 @@ Summary:	GNU Compiler Collection
 Summary(pl):	Kolekcja kompilatorów GNU
 Name:		%{rname}2
 Version:	2.95.4
-Release:	0.%{snap}.0
+Release:	0.%{snap}.1
 License:	GPL
 Group:		Development/Languages
 Source0:	ftp://gcc.gnu.org/pub/gcc/releases/gcc-%{rver}/%{rname}-%{rver}.tar.gz
@@ -38,6 +38,9 @@ BuildRequires:	bison
 BuildRequires:	texinfo
 Requires:	binutils >= 2.9.1.0.25
 Requires:	cpp2 = %{version}
+%ifarch alpha
+Conflicts:      glibc-devel < 2.2.5
+%endif
 URL:		http://gcc.gnu.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -455,10 +458,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/gcc-lib/%{_target_cpu}*/*/lib*.map
 %{_libdir}/gcc-lib/%{_target_cpu}*/*/specs
 
-%ifnarch alpha
 %attr(755,root,root) %{_libdir}/gcc-lib/%{_target_cpu}*/*/crt*.o
-%endif
-
 %attr(755,root,root) %{_libdir}/gcc-lib/%{_target_cpu}*/*/collect2
 
 %{_libdir}/gcc-lib/%{_target_cpu}*/*/include/float.h
