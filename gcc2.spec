@@ -42,7 +42,7 @@ BuildRequires:	automake
 Requires:	binutils >= 2.9.1.0.25
 Requires:	cpp2 = %{version}
 %ifarch alpha
-Conflicts:      glibc-devel < 2.2.5
+Conflicts:	glibc-devel < 2.2.5
 %endif
 URL:		http://gcc.gnu.org/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
