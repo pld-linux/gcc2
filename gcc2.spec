@@ -1,16 +1,18 @@
 %define		rname		gcc
 %define 	rver		2.95.3
+%define		snap		20010823
 %define		STDC_VERSION	2.10.0
+%define		STDC_RELEASE	2
 Summary:	GNU Compiler Collection
 Summary(pl):	Kolekcja kompilatorów GNU
 Name:		%{rname}2
-Version:	%{rver}
-Release:	1
+Version:	2.95.4
+Release:	0.%{snap}.0
 License:	GPL
 Group:		Development/Languages
 Group(de):	Entwicklung/Sprachen
 Group(pl):	Programowanie/Jêzyki
-Source0:	ftp://gcc.gnu.org/pub/gcc/releases/gcc-%{version}/%{rname}-%{version}.tar.gz
+Source0:	ftp://gcc.gnu.org/pub/gcc/releases/gcc-%{rver}/%{rname}-%{rver}.tar.gz
 Patch0:		%{name}-info.patch
 Patch1:		%{name}-pld-linux.patch
 Patch2:		%{name}-libstdc++.patch
@@ -31,9 +33,9 @@ Patch16:	%{name}-ppc-descriptions.patch
 Patch17:	%{name}-alpha-complex-float.patch
 Patch18:	%{name}-gcj-vs-iconv.patch
 Patch19:	%{name}-libobjc.patch
-Patch20:	%{name}-pointer-arith.patch
-Patch21:	%{name}-crtendS.patch
-Patch22:	%{name}-suffix.patch
+#Patch20:	%{name}-pointer-arith.patch
+Patch21:	%{name}-suffix.patch
+Patch50:	gcc-%{rver}-%{snap}.patch.bz2
 BuildRequires:	bison
 BuildRequires:	texinfo
 Requires:	binutils >= 2.9.1.0.25
@@ -196,6 +198,7 @@ Group(de):	Libraries
 Group(fr):	Librairies
 Group(pl):	Biblioteki
 Version:	%{STDC_VERSION}
+Release:	%{STDC_RELEASE}
 Obsoletes:	libg++
 Provides:	libstdc++ = %{STDC_VERSION}
 
@@ -234,6 +237,7 @@ Group(de):	Entwicklung/Libraries
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
 Version:	%{STDC_VERSION}
+Release:	%{STDC_RELEASE}
 Requires:	libstdc++2 = %{STDC_VERSION}
 Requires:	%{name}-c++
 Obsoletes:	libg++-devel
@@ -256,6 +260,7 @@ Group(de):	Entwicklung/Libraries
 Group(fr):	Development/Librairies
 Group(pl):	Programowanie/Biblioteki
 Version:	%{STDC_VERSION}
+Release:	%{STDC_RELEASE}
 Requires:	libstdc++2-devel = %{STDC_VERSION}
 
 %description -n libstdc++2-static
@@ -318,6 +323,7 @@ Preprocesor C umo¿liwia wykonywanie czterech ró¿nych typów operacji:
 
 %prep
 %setup -q -n %{rname}-%{rver}
+%patch50 -p1
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
@@ -346,9 +352,8 @@ Preprocesor C umo¿liwia wykonywanie czterech ró¿nych typów operacji:
 %endif
 %patch18 -p0
 %patch19 -p0
-%patch20 -p0
+#%patch20 -p0
 %patch21 -p1
-%patch22 -p1
 
 %build
 (cd gcc; autoconf)
