@@ -62,9 +62,9 @@ Summary(fr):	Support C++ pour le compilateur gcc
 Summary(pl):	Wspomaganie C++ dla kompilatora gcc
 Summary(tr):	gcc için C++ desteði
 Group:		Development/Languages
+Requires:	%{name} = %{version}
 Obsoletes:	egcc-c++
 Obsoletes:	egcs-c++
-Requires:	%{name} = %{version}
 
 %description c++
 This package adds C++ support to the GNU C compiler. It includes
@@ -101,9 +101,9 @@ Summary(fr):	Gestion d'Objective C pour gcc
 Summary(pl):	Wspomaganie obiektowego C dla kompilatora gcc
 Summary(tr):	gcc için Objective C desteði
 Group:		Development/Languages
+Requires:	%{name} = %{version}
 Obsoletes:	egcc-objc
 Obsoletes:	egcs-objc
-Requires:	%{name} = %{version}
 
 %description objc
 This package adds Objective C support to the GNU C compiler. Objective
@@ -171,9 +171,9 @@ CHILL.
 %package -n libstdc++2
 Summary:	GNU c++ library
 Summary(pl):	Biblioteki GNU C++
-Group:		Libraries
 Version:	%{STDC_VERSION}
 Release:	%{STDC_RELEASE}
+Group:		Libraries
 Obsoletes:	libg++
 
 %description -n libstdc++2
@@ -206,11 +206,11 @@ Summary(de):	Header-Dateien und Libraries zur Entwicklung mit C++
 Summary(fr):	Fichiers d'en-tête et biblitothèques pour développer en C++
 Summary(pl):	Pliki nag³ówkowe do programowania z u¿yciem bibliotek C++
 Summary(tr):	C++ ile program geliþtirmek için gerekli dosyalar
-Group:		Development/Libraries
 Version:	%{STDC_VERSION}
 Release:	%{STDC_RELEASE}
-Requires:	libstdc++2 = %{STDC_VERSION}
+Group:		Development/Libraries
 Requires:	%{name}-c++
+Requires:	libstdc++2 = %{STDC_VERSION}
 Obsoletes:	libg++-devel
 
 %description -n libstdc++2-devel
@@ -226,9 +226,9 @@ programowaniu w jêzyku C++.
 %package -n libstdc++2-static
 Summary:	Static c++ standard library
 Summary(pl):	Biblioteka statyczna c++
-Group:		Development/Libraries
 Version:	%{STDC_VERSION}
 Release:	%{STDC_RELEASE}
+Group:		Development/Libraries
 Requires:	libstdc++2-devel = %{STDC_VERSION}
 
 %description -n libstdc++2-static
@@ -511,7 +511,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files -n libstdc++2-static
 %defattr(644,root,root,755)
-%attr(644,root,root) %{_libdir}/gcc-lib/%{_target_cpu}*/*/libstdc++.a
+%{_libdir}/gcc-lib/%{_target_cpu}*/*/libstdc++.a
 
 %files -n cpp2
 %defattr(644,root,root,755)
