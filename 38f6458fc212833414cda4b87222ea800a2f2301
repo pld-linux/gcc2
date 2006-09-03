@@ -1,0 +1,2 @@
+- workaround for ac-2.5x: pass both --host and --build to configure
+  (cannot use new %configure - main configure is not autoconf-generated)
