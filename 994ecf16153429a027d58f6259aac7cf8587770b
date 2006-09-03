@@ -1,0 +1,2 @@
+- move libstdc++.so to %{_libdir}/gcc-lib/%{_target_cpu}*/*/libstdc++.so to
+  avoid conflicts with new libstdc++
