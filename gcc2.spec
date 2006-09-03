@@ -62,7 +62,7 @@ Summary(fr):	Support C++ pour le compilateur gcc
 Summary(pl):	Wspomaganie C++ dla kompilatora gcc
 Summary(tr):	gcc için C++ desteði
 Group:		Development/Languages
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 Obsoletes:	egcc-c++
 Obsoletes:	egcs-c++
 
@@ -101,7 +101,7 @@ Summary(fr):	Gestion d'Objective C pour gcc
 Summary(pl):	Wspomaganie obiektowego C dla kompilatora gcc
 Summary(tr):	gcc için Objective C desteði
 Group:		Development/Languages
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 Obsoletes:	egcc-objc
 Obsoletes:	egcs-objc
 
@@ -151,7 +151,7 @@ potrzebny do kompilowania programów pisanych w jêzyku Fortran 77.
 Summary:	CHILL support for gcc
 Summary(pl):	Wspomoganie CHILL dla gcc
 Group:		Development/Languages
-Requires:	%{name} = %{version}
+Requires:	%{name} = %{version}-%{release}
 
 %description chill
 This package adds support for compiling CHILL programs with the GNU
