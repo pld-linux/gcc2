@@ -4,7 +4,7 @@
 %define		STDC_VERSION	2.10.0
 %define		STDC_RELEASE	5
 Summary:	GNU Compiler Collection
-Summary(pl.UTF-8):   Kolekcja kompilatorów GNU
+Summary(pl.UTF-8):	Kolekcja kompilatorów GNU
 Name:		%{rname}2
 Version:	2.95.4
 Release:	0.%{snap}.6
@@ -58,9 +58,9 @@ wyprodukowania szybkiego i stabilnego kodu wynikowego.
 
 %package c++
 Summary:	C++ support for gcc
-Summary(fr.UTF-8):   Support C++ pour le compilateur gcc
-Summary(pl.UTF-8):   Wspomaganie C++ dla kompilatora gcc
-Summary(tr.UTF-8):   gcc için C++ desteği
+Summary(fr.UTF-8):	Support C++ pour le compilateur gcc
+Summary(pl.UTF-8):	Wspomaganie C++ dla kompilatora gcc
+Summary(tr.UTF-8):	gcc için C++ desteği
 Group:		Development/Languages
 Requires:	%{name} = %{version}-%{release}
 Obsoletes:	egcc-c++
@@ -96,10 +96,10 @@ C++ kitaplığı bu pakette yer almaz.
 
 %package objc
 Summary:	Objective C support for gcc
-Summary(de.UTF-8):   Objektive C-Unterstützung für gcc
-Summary(fr.UTF-8):   Gestion d'Objective C pour gcc
-Summary(pl.UTF-8):   Wspomaganie obiektowego C dla kompilatora gcc
-Summary(tr.UTF-8):   gcc için Objective C desteği
+Summary(de.UTF-8):	Objektive C-Unterstützung für gcc
+Summary(fr.UTF-8):	Gestion d'Objective C pour gcc
+Summary(pl.UTF-8):	Wspomaganie obiektowego C dla kompilatora gcc
+Summary(tr.UTF-8):	gcc için Objective C desteği
 Group:		Development/Languages
 Requires:	%{name} = %{version}-%{release}
 Obsoletes:	egcc-objc
@@ -135,7 +135,7 @@ kitaplığı bu pakette yer almaz.
 
 %package g77
 Summary:	Fortran 77 support for gcc
-Summary(pl.UTF-8):   Wspomaganie Fortran 77 dla gcc
+Summary(pl.UTF-8):	Wspomaganie Fortran 77 dla gcc
 Group:		Development/Languages
 Obsoletes:	egcs-g77
 
@@ -149,7 +149,7 @@ potrzebny do kompilowania programów pisanych w języku Fortran 77.
 
 %package chill
 Summary:	CHILL support for gcc
-Summary(pl.UTF-8):   Wspomoganie CHILL dla gcc
+Summary(pl.UTF-8):	Wspomoganie CHILL dla gcc
 Group:		Development/Languages
 Requires:	%{name} = %{version}-%{release}
 
@@ -170,7 +170,7 @@ CHILL.
 
 %package -n libstdc++2
 Summary:	GNU c++ library
-Summary(pl.UTF-8):   Biblioteki GNU C++
+Summary(pl.UTF-8):	Biblioteki GNU C++
 Version:	%{STDC_VERSION}
 Release:	%{STDC_RELEASE}
 Group:		Libraries
@@ -202,10 +202,10 @@ uygulamalarının koşturulması için gerekli kitaplıkları içerir.
 
 %package -n libstdc++2-devel
 Summary:	Header files and libraries for C++ development
-Summary(de.UTF-8):   Header-Dateien und Libraries zur Entwicklung mit C++
-Summary(fr.UTF-8):   Fichiers d'en-tête et biblitothèques pour développer en C++
-Summary(pl.UTF-8):   Pliki nagłówkowe do programowania z użyciem bibliotek C++
-Summary(tr.UTF-8):   C++ ile program geliştirmek için gerekli dosyalar
+Summary(de.UTF-8):	Header-Dateien und Libraries zur Entwicklung mit C++
+Summary(fr.UTF-8):	Fichiers d'en-tête et biblitothèques pour développer en C++
+Summary(pl.UTF-8):	Pliki nagłówkowe do programowania z użyciem bibliotek C++
+Summary(tr.UTF-8):	C++ ile program geliştirmek için gerekli dosyalar
 Version:	%{STDC_VERSION}
 Release:	%{STDC_RELEASE}
 Group:		Development/Libraries
@@ -225,7 +225,7 @@ programowaniu w języku C++.
 
 %package -n libstdc++2-static
 Summary:	Static c++ standard library
-Summary(pl.UTF-8):   Biblioteka statyczna c++
+Summary(pl.UTF-8):	Biblioteka statyczna c++
 Version:	%{STDC_VERSION}
 Release:	%{STDC_RELEASE}
 Group:		Development/Libraries
@@ -239,7 +239,7 @@ Biblioteka statyczna C++.
 
 %package -n cpp2
 Summary:	The C Pre Processor
-Summary(pl.UTF-8):   Preprocesor C
+Summary(pl.UTF-8):	Preprocesor C
 Group:		Development/Languages
 Obsoletes:	egcs-cpp
 
