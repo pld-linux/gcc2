@@ -411,11 +411,11 @@ rm -rf $RPM_BUILD_ROOT
 %postun chill	-p	/sbin/postshell
 -/usr/sbin/fix-info-dir -c %{_infodir}
 
-%post -n cpp2
-[ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
+%post -n cpp2	-p	/sbin/postshell
+-/usr/sbin/fix-info-dir -c %{_infodir}
 
-%postun -n cpp2
-[ ! -x /usr/sbin/fix-info-dir ] || /usr/sbin/fix-info-dir -c %{_infodir} >/dev/null 2>&1
+%postun -n cpp2	-p	/sbin/postshell
+-/usr/sbin/fix-info-dir -c %{_infodir}
 
 %post   -p /sbin/ldconfig -n libstdc++2
 %postun -p /sbin/ldconfig -n libstdc++2
