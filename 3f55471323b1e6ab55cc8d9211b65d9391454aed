@@ -1,0 +1,4 @@
+- release 4,
+- added bunch patches from Debian potato (full description inside each patch
+  file),
+- disable haifa and threads if compiled on sparc.
