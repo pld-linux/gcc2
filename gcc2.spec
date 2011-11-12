@@ -36,6 +36,7 @@ Patch19:	%{name}-libobjc.patch
 Patch21:	%{name}-suffix.patch
 Patch22:	%{name}-athlon-option.patch
 Patch50:	gcc-%{rver}-%{snap}.patch.bz2
+# Patch50-md5:	83f4163aa5b8492d27cbfc9eb8ea419c
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	bison
