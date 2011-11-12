@@ -1,0 +1,4 @@
+- releaase 5,
+- main package (gcc) must require cpp wit current version
+  ("Requires: cpp = %{version}"),
+- added "Requires: %{name}-g++ = %{version}" for libstdc++-devel.
