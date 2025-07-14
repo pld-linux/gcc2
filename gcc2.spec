@@ -290,38 +290,38 @@ Preprocesor C umożliwia wykonywanie czterech różnych typów operacji:
 
 %prep
 %setup -q -n %{rname}-%{rver}
-%patch50 -p1
-%patch0 -p1
-%patch1 -p1
-%patch2 -p1
-%patch3 -p1
-%patch4 -p0
-%patch5 -p0
-%patch6 -p0
-%patch7 -p0
-%patch8 -p0
-%patch9 -p0
-%patch10 -p0
-%patch11 -p1
+%patch -P50 -p1
+%patch -P0 -p1
+%patch -P1 -p1
+%patch -P2 -p1
+%patch -P3 -p1
+%patch -P4 -p0
+%patch -P5 -p0
+%patch -P6 -p0
+%patch -P7 -p0
+%patch -P8 -p0
+%patch -P9 -p0
+%patch -P10 -p0
+%patch -P11 -p1
 %ifarch m68k
-%patch12 -p0
+%patch -P12 -p0
 %endif
 %ifarch sparc sparc32
-%patch13 -p0
-%patch14 -p0
+%patch -P13 -p0
+%patch -P14 -p0
 %endif
 %ifarch ppc
-%patch15 -p0
-%patch16 -p0
+%patch -P15 -p0
+%patch -P16 -p0
 %endif
 %ifarch alpha
-%patch17 -p1
+%patch -P17 -p1
 %endif
-%patch18 -p0
-%patch19 -p0
+%patch -P18 -p0
+%patch -P19 -p0
 #%patch20 -p0
-%patch21 -p1
-%patch22 -p1
+%patch -P21 -p1
+%patch -P22 -p1
 
 %build
 rm -rf gcc/java
