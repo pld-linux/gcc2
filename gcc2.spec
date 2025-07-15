@@ -319,7 +319,7 @@ Preprocesor C umożliwia wykonywanie czterech różnych typów operacji:
 %endif
 %patch -P18 -p0
 %patch -P19 -p0
-#%patch20 -p0
+#%%patch20 -p0
 %patch -P21 -p1
 %patch -P22 -p1
 
